@@ -1,0 +1,55 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id         String      @id @default(uuid())
+  email      String      @unique
+  password   String
+  role       String      @default("USER") // "USER" or "ADMIN"
+  restricted Boolean     @default(false)
+  createdAt  DateTime    @default(now())
+  urls       Url[]
+  accessLogs AccessLog[]
+}
+
+model Url {
+  id          String    @id @default(uuid())
+  shortCode   String    @unique
+  longUrl     String
+  customAlias String?   @unique
+  createdAt   DateTime  @default(now())
+  expiresAt   DateTime?
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clicks      Click[]
+}
+
+model Click {
+  id        String   @id @default(uuid())
+  urlId     String
+  url       Url      @relation(fields: [urlId], references: [id], onDelete: Cascade)
+  timestamp DateTime @default(now())
+  ip        String?
+  userAgent String?
+  device    String?
+  browser   String?
+  referrer  String?
+}
+
+model AccessLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String   // "LOGIN", "LOGOUT", "SIGNUP"
+  timestamp DateTime @default(now())
+  ip        String?
+  userAgent String?
+  device    String?
+  browser   String?
+}

@@ -1,0 +1,72 @@
+# 🌌 Cosmic URL Shortener & Analytics
+
+A full-stack URL shortener application designed with a dark, space-themed control center aesthetic. This application allows users to create short links, print vector QR codes, upload bulk sheets, track click graphs, and audit security login history.
+
+---
+
+## 🛰️ How the Application Works (Architecture)
+
+The application uses a standard full-stack structure:
+
+1. **Frontend (React & CSS):** 
+   Runs in the browser on port `5173`. It provides the login screens, forms to shorten links, data tables, and click charts.
+2. **Backend Server (Node.js & Express):**
+   Runs on port `5000`. It acts as the API coordinator. It validates incoming links, handles user registration, saves records, and executes immediate `302` page redirects when a short link is clicked.
+3. **Database Connector (Prisma & SQLite):**
+   Stores all data locally in a `dev.db` database file. Prisma acts as the query translator, which allows you to switch between PostgreSQL and MongoDB easily.
+
+---
+
+## 📋 Features Overview
+
+* **Cleareance Logins (RBAC):** Register as a standard **Officer (User)** or a **Command Admin**.
+* **URL Shortening:** Submit any web address to generate a unique shortcode (with custom aliases and expiry timers).
+* **Vector QR Code:** Downloads high-res QR codes connected to local network IPs so mobile phones can scan them.
+* **Bulk Upload (CSV):** Drop a spreadsheet file containing a list of links to compress them in batches.
+* **Live Telemetry (Charts):** Visualizes visitor daily clicks, browsers (Chrome/Safari), and device types (Desktop/Mobile).
+* **Mainframe Logs:** Displays login and logout audit sessions. Standard users see masked logs to protect privacy, while Admins view everything.
+* **Administrative Blocks:** Admins can revoke access to suspends users who share sensitive links.
+
+---
+
+## 📝 Assumptions Made
+
+1. **Local Database:** Prisma is set to SQLite (`dev.db` file) so the app runs out-of-the-box on any computer. You can switch to **PostgreSQL** or **MongoDB** by changing the database connection URL in `.env`.
+2. **Security & Passwords:** All user passwords are encrypted using `bcryptjs` hashing. Sessions are secured using JSON Web Tokens (JWT).
+3. **Cross-Device Testing:** The app server is configured to accept connections from other devices on the same Wi-Fi network, allowing easy mobile QR code scanning.
+
+---
+
+## 🎥 Video Demonstration
+* **Explanatory Demo Link:** [INSERT YOUR LOOM OR YOUTUBE VIDEO LINK HERE]
+* *Please replace this placeholder with your actual walkthrough video before submitting.*
+
+---
+
+## 📦 How to Setup & Run the Application
+
+Follow these steps in your command terminal:
+
+### 1. Install Packages
+Installs all dependencies for both the frontend client and the backend server:
+```bash
+npm run install:all
+```
+
+### 2. Prepare the Database
+Creates your local database file and runs database tables setup:
+```bash
+npm run db:migrate
+```
+
+### 3. Launch the Application
+Launches both servers concurrently:
+```bash
+npm run dev
+```
+* **Frontend website:** Open `http://localhost:5173`
+* **Backend API server:** Runs on `http://localhost:5000`
+
+---
+
+This project is a part of a hackathon run by https://katomaran.com
