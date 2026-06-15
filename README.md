@@ -39,30 +39,22 @@ The application uses a standard full-stack structure:
 
 ## 📸 Telemetry Snapshots (Application Interface)
 
-Below are snapshots from the active system command deck. You can capture these from your own local running instance and save them to `docs/images/` with the designated filenames to render them:
-
 ### 1. Main Landing Bridge (Before Login)
-*File location: `docs/images/01_landing_page.png`*
 ![Main Dashboard Landing Bridge](docs/images/01_landing_page.png)
 
 ### 2. Analytics Control Deck (Desktop/Mobile Ratios & Telemetry)
-*File location: `docs/images/02_analytics_deck.png`*
 ![Analytics Control Deck](docs/images/02_analytics_deck.png)
 
 ### 3. Command Admin Registry (Access Revocation Control)
-*File location: `docs/images/03_admin_revoke_panel.png`*
 ![Admin Revocation Control](docs/images/03_admin_revoke_panel.png)
 
 ### 4. Restricted Officer Alert (Suspended Account Lockout)
-*File location: `docs/images/04_revoked_account_warning.png`*
 ![Restricted Lockout Screen](docs/images/04_revoked_account_warning.png)
 
 ### 5. Command Admin Log Audits (Full Telemetry Details)
-*File location: `docs/images/05_admin_telemetry_logs.png`*
 ![Admin Log Audits](docs/images/05_admin_telemetry_logs.png)
 
 ### 6. Standard Officer Log Masking (Confidential Data Filter)
-*File location: `docs/images/06_user_confidential_logs.png`*
 ![User Confidential Logs](docs/images/06_user_confidential_logs.png)
 
 ---
