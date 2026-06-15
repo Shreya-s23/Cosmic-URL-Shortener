@@ -1896,3 +1896,67 @@ input:focus + .input-icon {
   white-space: nowrap;
 }
 
+/* Privacy Policy & Security Protocol Styles */
+.privacy-policy-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--primary);
+  border: 1px solid var(--border-glow);
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.checkbox-wrapper input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.checkbox-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  user-select: none;
+  text-transform: none !important;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-bottom: 0;
+}
+
+.checkbox-wrapper:hover .checkbox-label {
+  color: var(--text-primary);
+}
+
+.privacy-policy-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.privacy-policy-text strong {
+  color: var(--error);
+  text-shadow: 0 0 5px var(--error-glow);
+  display: block;
+  margin-bottom: 4px;
+}
+

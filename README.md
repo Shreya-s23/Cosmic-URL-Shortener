@@ -37,15 +37,21 @@ The application uses a standard full-stack structure:
 
 ---
 
-## 🎥 Video Demonstration
-* **Explanatory Demo Link:** [INSERT YOUR LOOM OR YOUTUBE VIDEO LINK HERE]
-* *Please replace this placeholder with your actual walkthrough video before submitting.*
+## 📸 Command Bridge Snapshots
+
+Here are visual telemetry readouts from the application:
+
+### Cosmic Dashboard UI
+![Cosmic Dashboard](docs/images/dashboard.png)
+
+### Live Click Telemetry & Geo/Browser Analytics
+![Analytics Console](docs/images/analytics.png)
 
 ---
 
 ## 📦 How to Setup & Run the Application
 
-Follow these steps in your command terminal:
+You can clone this repository and run the application inside your local network. Follow these steps in your command terminal:
 
 ### 1. Install Packages
 Installs all dependencies for both the frontend client and the backend server:
@@ -66,6 +72,11 @@ npm run dev
 ```
 * **Frontend website:** Open `http://localhost:5173`
 * **Backend API server:** Runs on `http://localhost:5000`
+
+### 🌐 Local Network & Cross-Device Access
+Both the Vite dev server and Express backend are pre-configured to bind and expose endpoints across your local network IP (using the `--host` flag). This means:
+1. Anyone on your local network (Wi-Fi or LAN) can view and interact with the application.
+2. If you generate a vector QR code in the dashboard, you can scan it directly with your mobile phone to experience the redirection mechanics in real-time.
 
 ---
 

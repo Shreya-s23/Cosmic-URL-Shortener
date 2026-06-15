@@ -8,6 +8,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('USER');
+  const [acceptedPolicy, setAcceptedPolicy] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -19,6 +20,10 @@ const Signup = () => {
 
     if (password !== confirmPassword) {
       return setError('Passwords do not match');
+    }
+
+    if (!acceptedPolicy) {
+      return setError('You must accept the Mainframe Privacy Policy & Security Protocol to register.');
     }
 
     setLoading(true);
@@ -123,6 +128,26 @@ const Signup = () => {
               <option value="USER">Officer (Standard User)</option>
               <option value="ADMIN">Command Admin (Administrator)</option>
             </select>
+          </div>
+
+          <div className="form-group privacy-policy-group">
+            <div className="checkbox-wrapper" onClick={() => !loading && setAcceptedPolicy(!acceptedPolicy)}>
+              <input
+                type="checkbox"
+                id="privacyPolicy"
+                checked={acceptedPolicy}
+                onChange={(e) => setAcceptedPolicy(e.target.checked)}
+                disabled={loading}
+                required
+                onClick={(e) => e.stopPropagation()}
+              />
+              <label htmlFor="privacyPolicy" className="checkbox-label">
+                I agree to the Mainframe Privacy Policy & Security Protocol
+              </label>
+            </div>
+            <div className="privacy-policy-text">
+              <strong>Security Protocol Warning:</strong> System administrators monitor all transmission routes, logs, and shortcodes. Access to all system URLs is audited. The Command Administration reserves the right to immediately suspend clearance credentials and lock accounts if sensitive information leaks or illegal activity is detected.
+            </div>
           </div>
 
           <button type="submit" className="btn btn-primary btn-block btn-warp" disabled={loading}>
