@@ -55,7 +55,10 @@ The application uses a standard full-stack structure:
 ![User Confidential Logs](docs/images/officer_masked_logs.png)
 
 ---
+**Video link**:
+https://drive.google.com/file/d/1elgs77O8fPxca2a_XVs6iKH6k2CT5M6i/view?usp=drive_link
 
+---
 ## 📦 How to Setup & Run the Application
 
 You can clone this repository and run the application inside your local network. Follow these steps in your command terminal:
