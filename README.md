@@ -40,22 +40,19 @@ The application uses a standard full-stack structure:
 ## 📸 Telemetry Snapshots (Application Interface)
 
 ### 1. Main Landing Bridge (Before Login)
-![Main Dashboard Landing Bridge](docs/images/01_landing_page.png)
+![Main Dashboard Landing Bridge](docs/images/main_dashboard.png)
 
 ### 2. Analytics Control Deck (Desktop/Mobile Ratios & Telemetry)
-![Analytics Control Deck](docs/images/02_analytics_deck.png)
+![Analytics Control Deck](docs/images/analytics_charts.png)
 
 ### 3. Command Admin Registry (Access Revocation Control)
-![Admin Revocation Control](docs/images/03_admin_revoke_panel.png)
+![Admin Revocation Control](docs/images/admin_user_registry.png)
 
 ### 4. Restricted Officer Alert (Suspended Account Lockout)
-![Restricted Lockout Screen](docs/images/04_revoked_account_warning.png)
+![Restricted Lockout Screen](docs/images/suspended_account.png)
 
-### 5. Command Admin Log Audits (Full Telemetry Details)
-![Admin Log Audits](docs/images/05_admin_telemetry_logs.png)
-
-### 6. Standard Officer Log Masking (Confidential Data Filter)
-![User Confidential Logs](docs/images/06_user_confidential_logs.png)
+### 5. Mainframe Access Logs (Confidential Data Masking)
+![User Confidential Logs](docs/images/officer_masked_logs.png)
 
 ---
 
